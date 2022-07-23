@@ -35,11 +35,36 @@ namespace TicTacToeTraced
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(
-                $"_____________\n" +
-                $"|_X_|___|_O_|\n" +
-                $"|_X_|___|_O_|\n" +
-                $"|_X_|___|_O_|");
+            char[,] board = new char[3, 3];
+            //board[0, 0] = 'X';
+            //board[1, 0] = '_';
+            //board[2, 0] = 'X';
+            //board[0, 1] = '_';
+            //board[1, 1] = '_';
+            //board[2, 1] = '_';
+            //board[0, 2] = '_';
+            //board[1, 2] = 'X';
+            //board[2, 2] = 'O';
+
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    if (board[row, column] == null)
+                    {
+                        Console.Write("_");
+                    }
+                    Console.Write($"| {board[row, column]} |");
+                    //Console.Write($"| {board[row,column]} |");
+                }
+                Console.WriteLine();
+            }
+            //That one is good, but for loops above are more efficient
+            //Console.WriteLine(
+            //    $" _________\n" +
+            //    $"|_{board[0, 0]}_|_{board[0, 1]}_|_{board[0, 2]}_|\n" +
+            //    $"|_{board[1, 0]}_|_{board[1, 1]}_|_{board[1, 2]}_|\n" +
+            //    $"|_{board[2, 0]}_|_{board[2, 1]}_|_{board[2, 2]}_|");
         }
     }
 }
